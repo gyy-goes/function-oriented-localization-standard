@@ -12,17 +12,6 @@
 - 底层内核：Common-LSG v0.1+
 - 第三方依赖：numpy, pydicom
 
-## 调用示例
-```python
-from Medical_CT.hardware_adapt.dicom_ct_parser import DicomCTParser
-from Common_LSG.slice_rebuild import SectionRebuilder
-
-parser = DicomCTParser()
-ct_data = parser.load_dicom_series("./dicom_data")
-rebuilder = SectionRebuilder()
-model = rebuilder.non_orthogonal_rebuild(ct_data.section_stack, ct_data.spacing)
-开源声明
-本模块场景优化代码遵循 MIT 协议，底层几何内核永久归入人类公共知识领域，禁止基于本模块核心逻辑申请独占专利。
 
 ## CT DICOM 3D重建运行教程
 ## 1.环境准备
@@ -40,3 +29,17 @@ python main.py
 三维STL/OBJ模型、运算指标保存在./output文件夹
 ## 合规说明
 仅学术使用，商用需确认CT数据集授权
+
+
+## 调用示例
+```python
+from Medical_CT.hardware_adapt.dicom_ct_parser import DicomCTParser
+from Common_LSG.slice_rebuild import SectionRebuilder
+
+parser = DicomCTParser()
+ct_data = parser.load_dicom_series("./dicom_data")
+rebuilder = SectionRebuilder()
+model = rebuilder.non_orthogonal_rebuild(ct_data.section_stack, ct_data.spacing)
+开源声明
+本模块场景优化代码遵循 MIT 协议，底层几何内核永久归入人类公共知识领域，禁止基于本模块核心逻辑申请独占专利。
+
